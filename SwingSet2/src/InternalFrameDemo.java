@@ -192,7 +192,8 @@ public class InternalFrameDemo extends DemoModule {
 		 " Reload ('перезагрузить') в Netscape, чтобы увидеть  эти изменения реализованными в HTML-документе.</P>"+
 		 "</body>";
         
-        DBase base = new DBase("G:\\DV\\Базы\\RST+.SQLite3", "Синодальная");
+        // DBase base = new DBase("G:\\DV\\Базы\\RST+.SQLite3", "Синодальная");
+        DBase base = new DBase("db//RST+.SQLite3", "Синодальная");
         try {
     		base.ConnDBase();
     		MyHTML = base.GetChapterText(20, 3);
