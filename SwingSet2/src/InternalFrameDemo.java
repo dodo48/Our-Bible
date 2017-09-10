@@ -126,6 +126,7 @@ public class InternalFrameDemo extends DemoModule {
 
         // Create four more starter windows
         // privet!
+        // ещё изменения
         //222 createInternalFrame(icon1, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon3, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon4, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
