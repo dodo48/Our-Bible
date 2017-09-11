@@ -192,6 +192,18 @@ public class InternalFrameDemo extends DemoModule {
 		 " Reload ('перезагрузить') в Netscape, чтобы увидеть  эти изменения реализованными в HTML-документе.</P>"+
 		 "</body>";
         
+        // Общий список книг
+        DBase FullBooksList = new DBase("db//FullBooksList.SQLite3", "Общий список книг");
+        
+        ArrayList<BookDiskription> arraylist = new ArrayList<BookDiskription>();
+       /* 
+ 	   arraylist.add(new BookDiskription("223", "Chaitanya", "26"));
+ 	   arraylist.add(new BookDiskription("245", "Rahul", "24"));
+ 	   arraylist.add(new BookDiskription("209", "Ajeet", "32"));
+
+ 	   Collections.sort(arraylist);    */    
+        
+        
         // DBase base = new DBase("G:\\DV\\Базы\\RST+.SQLite3", "Синодальная");
         DBase base = new DBase("db//RST+.SQLite3", "Синодальная");
         try {
