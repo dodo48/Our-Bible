@@ -1,15 +1,15 @@
 
-public class BookDiskription {
+public class BookDescription {
 	
 	String ID;
 	String IDBook;
-	String Diskription;
+	String Description;
 	
 	
-	public BookDiskription(String ID, String IDBook, String Diskription) {
+	public BookDescription(String ID, String IDBook, String Description) {
         this.ID = ID;
         this.IDBook = IDBook;
-        this.Diskription = Diskription;
+        this.Description = Description;
    }
 
    public String getID() {
@@ -24,11 +24,11 @@ public class BookDiskription {
    public void setIDBook(String IDBook) {
 	this.IDBook = IDBook;
    }
-   public String getDiskription() {
-	return Diskription;
+   public String getDescription() {
+	return Description;
    }
-   public void setDiskription(String Diskription) {
-	this.Diskription = Diskription;
+   public void setDiskription(String Description) {
+	this.Description = Description;
    }		
 
 }

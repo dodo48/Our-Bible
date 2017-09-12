@@ -195,7 +195,7 @@ public class InternalFrameDemo extends DemoModule {
         // Общий список книг
         DBase FullBooksList = new DBase("db//FullBooksList.SQLite3", "Общий список книг");
         
-        ArrayList<BookDiskription> arraylist = new ArrayList<BookDiskription>();
+        ArrayList<BookDescription> arraylist = new ArrayList<BookDescription>();
        /* 
  	   arraylist.add(new BookDiskription("223", "Chaitanya", "26"));
  	   arraylist.add(new BookDiskription("245", "Rahul", "24"));

@@ -61,11 +61,11 @@ public class SwingSet2 extends JPanel {
 
     String[] demos = {
       "ButtonDemo",
+      "FileChooserDemo",
       //"ColorChooserDemo",
       //"ComboBoxDemo",
-      //"FileChooserDemo",
       //"HtmlDemo",
-      //"ListDemo",
+      "ListDemo",
       //"OptionPaneDemo",
       //"ProgressBarDemo",
       //"ScrollPaneDemo",
