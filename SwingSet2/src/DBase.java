@@ -55,7 +55,9 @@ public class DBase {
 		statmt = conn.createStatement();
 		resSet = statmt.executeQuery("SELECT * FROM VERSES WHERE book_number = " + bookNumber + " AND chapter = " + chapter + ";");
 
-		String result = "<body><H1>Глава " + chapter + "</H1>";
+		String result = "<body><H1>Глава " + chapter + "</H1>"
+		+ "<br><a href=\"http://тыц2\">ссылка без переадресации</a></br>"
+		+ "<br><a href=\"http://тыц\">ссылка с переадресацией</a></br>";
 
 		while (resSet.next()) {
 			// int id = resSet.getInt("id");

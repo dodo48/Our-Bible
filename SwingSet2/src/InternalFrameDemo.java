@@ -125,10 +125,7 @@ public class InternalFrameDemo extends DemoModule {
         frame1.setBounds(FRAME0_X, FRAME0_Y, FRAME0_WIDTH, FRAME0_HEIGHT);
 
         // Create four more starter windows
-        // privet!
-        // ещё изменения
-        // я не согласен
-        //222 createInternalFrame(icon1, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
+        //createInternalFrame(icon1, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon3, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon4, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon2, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
@@ -197,9 +194,9 @@ public class InternalFrameDemo extends DemoModule {
         
         ArrayList<BookDescription> arraylist = new ArrayList<BookDescription>();
        /* 
- 	   arraylist.add(new BookDiskription("223", "Chaitanya", "26"));
- 	   arraylist.add(new BookDiskription("245", "Rahul", "24"));
- 	   arraylist.add(new BookDiskription("209", "Ajeet", "32"));
+ 	   arraylist.add(new BookDescription("223", "Chaitanya", "26"));
+ 	   arraylist.add(new BookDescription("245", "Rahul", "24"));
+ 	   arraylist.add(new BookDescription("209", "Ajeet", "32"));
 
  	   Collections.sort(arraylist);    */    
         
@@ -216,6 +213,8 @@ public class InternalFrameDemo extends DemoModule {
 			e.printStackTrace();
 		}
         
+        MyHTML = "" + MyHTML;
+        
         editorPane.setText(MyHTML);
         
         editorPane.setEditable(false);
@@ -226,6 +225,19 @@ public class InternalFrameDemo extends DemoModule {
         vp.add(editorPane); 
         jif.add(scroller, BorderLayout.CENTER);
 		
+        // Обработчика клика на ссылку.
+        editorPane.addHyperlinkListener(new HyperlinkListener() {
+        	public void hyperlinkUpdate(HyperlinkEvent e) {
+        		if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+	        		if (e.getURL().toString().equals("http://тыц")) {
+	        			// Можно получить текст другой книги или остаться в этой книге и спозиционироваться на конкретном стихе.
+	        			//editorPane.setText("Типа переадресация");
+	        			editorPane.setCaretPosition(2300);
+	        		}
+        		}
+        	}
+        });
+                
 
         /*
         if(!windowTitleField.getText().equals(getString("InternalFrameDemo.frame_label"))) {
@@ -413,7 +425,7 @@ public class InternalFrameDemo extends DemoModule {
     public Integer getDemoFrameLayer() {
         return DEMO_FRAME_LAYER;
     }
-
+    
     class ImageScroller extends JScrollPane {
 
         public ImageScroller(InternalFrameDemo demo, Icon icon, int layer, int count) {
