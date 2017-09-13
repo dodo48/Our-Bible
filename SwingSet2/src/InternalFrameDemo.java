@@ -130,6 +130,11 @@ public class InternalFrameDemo extends DemoModule {
         createInternalFrame(icon4, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createInternalFrame(icon2, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
         createMyInternalFrame(icon2, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
+        
+        DBase FullBooksList = new DBase("db//FullBooksList.SQLite3", "Общий список книг");
+        // Общий список книг
+        AllBookDescription abd = new AllBookDescription();
+       
     }
 
 
@@ -189,16 +194,6 @@ public class InternalFrameDemo extends DemoModule {
 		 " Reload ('перезагрузить') в Netscape, чтобы увидеть  эти изменения реализованными в HTML-документе.</P>"+
 		 "</body>";
         
-        // Общий список книг
-        DBase FullBooksList = new DBase("db//FullBooksList.SQLite3", "Общий список книг");
-        
-        ArrayList<BookDescription> arraylist = new ArrayList<BookDescription>();
-       /* 
- 	   arraylist.add(new BookDescription("223", "Chaitanya", "26"));
- 	   arraylist.add(new BookDescription("245", "Rahul", "24"));
- 	   arraylist.add(new BookDescription("209", "Ajeet", "32"));
-
- 	   Collections.sort(arraylist);    */    
         
         
         // DBase base = new DBase("G:\\DV\\Базы\\RST+.SQLite3", "Синодальная");

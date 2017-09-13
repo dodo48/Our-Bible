@@ -1,3 +1,4 @@
+/resources/
 /AquaTheme.class
 /BezierAnimationPanel$1.class
 /BezierAnimationPanel.class
@@ -26,6 +27,7 @@
 /FilePreviewer.class
 /InternalFrameDemo$1.class
 /InternalFrameDemo$2.class
+/InternalFrameDemo$3.class
 /InternalFrameDemo$ImageScroller.class
 /InternalFrameDemo$ShowFrameAction.class
 /InternalFrameDemo.class
@@ -40,7 +42,6 @@
 /ListDemo$UpdateSuffixListAction.class
 /ListDemo.class
 /Permuter.class
-/README.txt
 /RubyTheme.class
 /SwingSet2$1.class
 /SwingSet2$2.class
@@ -68,8 +69,6 @@
 /SwingSet2$ToolBarPanel.class
 /SwingSet2$ToolTipAction.class
 /SwingSet2.class
-/SwingSet2.html
 /SwingSet2Applet.class
 /TextAndMnemonicUtils.class
-/resources/
-/InternalFrameDemo$3.class
+/AllBookDescription.class

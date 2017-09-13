@@ -119,7 +119,21 @@ public class ListDemo extends DemoModule {
 				//JFrame frame = new JFrame();
 				//frame.setBounds(0, 0, 500, 500);
 				JFileChooser dialog = new JFileChooser();
-				int ret = dialog.showSaveDialog(null); 
+				int ret = dialog.showDialog(null, "Открыть файл");  
+                if (ret == JFileChooser.APPROVE_OPTION) {
+                    File file = dialog.getSelectedFile();
+                    //System.out.println(file.getName());
+                    
+                    // Проверка на соппадение
+                    if(AllBookDescription.compBook("1", file.getName(), "")) {
+                    	AllBookDescription.addBook("1", file.getName(), "");
+                        addPrefix(file.getName(), false);
+
+                    }
+                }
+				
+				
+				
         
         
 				//dialog.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -167,6 +181,7 @@ public class ListDemo extends DemoModule {
         addPrefix("YoYo", true);
         addPrefix("Northern", false);
         addPrefix("Tele", false);
+        /*
         addPrefix("Eastern", false);
         addPrefix("Neo", false);
         addPrefix("Digi", false);
@@ -176,7 +191,6 @@ public class ListDemo extends DemoModule {
         addPrefix("Info", false);
         addPrefix("Western", false);
         addPrefix("Data", false);
-        /*
         addPrefix("Atlantic", false);
         addPrefix("Advanced", false);
         addPrefix("Euro", false);
@@ -286,6 +300,8 @@ public class ListDemo extends DemoModule {
             listModel.addPrefix(prefix);
         }
         cb.addFocusListener(listFocusListener);
+        
+
     }
 
     public void addSuffix(String suffix, boolean selected) {
