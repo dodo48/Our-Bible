@@ -182,6 +182,11 @@ public class InternalFrameDemo extends DemoModule {
     public JInternalFrame createMyInternalFrame(Icon icon, Integer layer, int width, int height) {
         JInternalFrame jif = new JInternalFrame();
         
+        // Командная панель+
+        JToolBar jifToolBar = new JToolBar();
+        jif.add(jifToolBar, BorderLayout.NORTH);        
+        // Командная панель-         
+        
 		JEditorPane editorPane = new JEditorPane();
 		getContentPane().add(editorPane, BorderLayout.CENTER);
         editorPane.setContentType("text/html");
@@ -254,6 +259,24 @@ public class InternalFrameDemo extends DemoModule {
         
         jif.setBounds(koef*(windowCount%10), koef*(windowCount%10), width*koef/5, height*koef/5);
         //jif.setContentPane(new ImageScroller(this, icon, 0, windowCount));
+        
+        // Кнопка командной панели для раскраски слов
+        JButton colorButton = new JButton("Выделить слово");
+        colorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorizeWord(evt);
+            }
+            
+            private void colorizeWord(ActionEvent evt) {
+            	System.out.println(editorPane.getSelectedText());            
+            }
+        });
+        //
+
+        
+        jifToolBar.add(new JToggleButton("123"));
+        
+
         
         windowCount++;
 
