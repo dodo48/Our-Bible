@@ -39,6 +39,8 @@ import javax.swing.border.*;
 import javax.swing.colorchooser.*;
 import javax.swing.filechooser.*;
 import javax.accessibility.*;
+import javax.swing.JFileChooser.*;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -63,6 +65,7 @@ public class ListDemo extends DemoModule {
     JList list;
 
     JPanel prefixList;
+
     JPanel suffixList;
 
     Action prefixAction;
@@ -107,6 +110,8 @@ public class ListDemo extends DemoModule {
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.X_AXIS));
         centerPanel.add(Box.createRigidArea(HGAP10));
+
+        
         getDemoPanel().add(centerPanel, BorderLayout.SOUTH);
         
         addBook.addActionListener(new java.awt.event.ActionListener() {
@@ -119,16 +124,23 @@ public class ListDemo extends DemoModule {
 				//JFrame frame = new JFrame();
 				//frame.setBounds(0, 0, 500, 500);
 				JFileChooser dialog = new JFileChooser();
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("SQLite", "SQLite3");
+				dialog.setFileFilter(filter);
 				int ret = dialog.showDialog(null, "Открыть файл");  
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     File file = dialog.getSelectedFile();
                     //System.out.println(file.getName());
                     
-                    // Проверка на соппадение
+                    // Проверка на совпадение
                     if(AllBookDescription.compBook("1", file.getName(), "")) {
                     	AllBookDescription.addBook("1", file.getName(), "");
                         addPrefix(file.getName(), false);
 
+                    }
+                    else {
+                    	
+                    JOptionPane.showMessageDialog(null, "Данный объект присутствует в списке", "Ошибка", JOptionPane.ERROR_MESSAGE);
+                    
                     }
                 }
 				
